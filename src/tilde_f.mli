@@ -59,9 +59,9 @@ val of_unlabeled : (('a -> 'b) -> 'c) -> f:('a -> 'b) -> 'c
 
 (** Use [of_local] to adapt a function that would have the right type for [Tilde_f] except
     that its parameter is local. *)
-val of_local : (f:(('a -> 'b)[@local]) -> 'c) -> f:('a -> 'b) -> 'c
+val of_local : (f:('a -> 'b) -> 'c) -> f:('a -> 'b) -> 'c
 
 (** Use [of_local_k] to adapt a function that would have the right type for [Tilde_f.bind]
     except that its parameter is local. ([k] is for Kleisli, which refers to a function
     whose type is of the form ['a -> 'b M.t].) *)
-val of_local_k : ('a -> f:(('b -> 'c)[@local]) -> 'd) -> 'a -> f:('b -> 'c) -> 'd
+val of_local_k : ('a -> f:('b -> 'c) -> 'd) -> 'a -> f:('b -> 'c) -> 'd

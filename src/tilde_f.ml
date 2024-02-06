@@ -12,5 +12,5 @@ end)
 let run t = t ~f:Fn.id
 let of_curried t ~f = t ~f:(fun a b -> f (a, b))
 let of_unlabeled t ~f = t f
-let of_local t = (t : f:(('a -> 'b)[@local]) -> 'c :> f:('a -> 'b) -> 'c)
-let of_local_k f = (f : 'a -> f:(('b -> 'c)[@local]) -> 'd :> 'a -> f:('b -> 'c) -> 'd)
+let of_local t = (t : f:('a -> 'b) -> 'c :> f:('a -> 'b) -> 'c)
+let of_local_k f = (f : 'a -> f:('b -> 'c) -> 'd :> 'a -> f:('b -> 'c) -> 'd)
