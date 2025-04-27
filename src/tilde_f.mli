@@ -4,11 +4,7 @@ open! Base
     more readable. The following expression:
 
     {[
-      E1 ~f:(fun w ->
-        E2 ~f:(fun x ->
-          E3 ~f:(fun y ->
-            E4 ~f:(fun z ->
-              E5))))
+      (E1) ~f:(fun w -> (E2) ~f:(fun x -> (E3) ~f:(fun y -> (E4) ~f:(fun z -> E5))))
     ]}
 
     can be written:
